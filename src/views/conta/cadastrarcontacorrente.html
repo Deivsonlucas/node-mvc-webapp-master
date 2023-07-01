@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        {{#pessoa}}
+        <div class="alert alert-success alert-dismissible">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>{{pessoa.result}}</strong> cadastrado(a) com sucesso!
+        </div>
+    {{/pessoa}}
+
+    {{#erro}}
+        <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>{{erro}}</strong> não foi possível concluir o cadastro.
+        </div>
+    {{/erro}}
+
+    <h1>Cadastro de Conta Corrente</h1>
+
+        <form method="post" action="/conta/cadastrarcontacorrente">
+
+            <div class="row">
+                <div class="col-3">
+                    <label class="form-label" for="nomedeusuario">Nome do usuario</label>
+                    <input class="form-control" type="text" id="nomedeusuario" name="nomedeusuario">
+                </div>
+                <div class="col-3">
+                    <label class="form-label" for="numerodaconta">Numero da Conta</label>
+                    <input class="form-control" type="number" id="numerodaconta" name="numerodaconta">
+                </div>
+                <div class="col-3">
+                    <label class="form-label" for="nomedaconta">Nome da Conta</label>
+                    <input class="form-control" type="text" id="nomedaconta" name="nomedaconta">
+                </div>
+                <div class="col-3">
+                    <label class="form-label" for="datadeabertura">Data da Abertura de Conta</label>
+                    <input class="form-control" type="date" id="datadeabertura" name="datadeabertura">
+                </div>
+                <div class="col-3">
+                    <label class="form-label" for="saldo">Saldo</label>
+                    <input class="form-control" type="number" id="saldo" name="saldo">
+                </div>
+
+
+            </div>
+            <div class="d-grid mt-3">
+                <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+            </div>
+        </form>
+
+    </div>
+
+</body>
+
+</html>
